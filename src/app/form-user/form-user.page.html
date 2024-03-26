@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <div class="flex justify-start">
+    <ion-button class="text-start" fill="clear" size="small" aria-label="Favorite" href="/phone-number" >
+      <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+    </ion-button>
+    <div class="flex flex-col justify-center items-center mt-3 ml-11">
+      <ion-title color="secondary" class="mb-4 font-bold">DATOS DE CUENTA</ion-title>
+      <div class="mb-2">
+        <img src="assets/stepTwo.svg">
+      </div>
+    </div>
+  </div>
+</ion-header>
+<ion-content color="light"  class="ion-padding" [fullscreen]="true" >
+  <div class="flex justify-center mt-3 border-solid border-b-2 border-green-300 p-3">
+    <div class="flex justify-around w-11/12">
+      <img class="w-16 mr-6" src="assets/Oink.svg" alt="Coink Logo">
+      <div class="flex flex-col">
+        <ion-text color="secondary" class="font-bold">CUALES SON TUS DATOS?</ion-text>
+        <ion-text color="medium" class="splash-text" >Para comenzar, por favor ingresa <strong>tu numero celular.</strong> </ion-text>
+      </div>
+    </div>
+  </div>
+  <form [formGroup]="formulario" (submit)="submit()">
+    <div class="p-4">
+      <div class="text-slate-600">
+        <ion-text color="secondary" class="mb-4 font-bold">Documento de identidad</ion-text>
+        <div class="pr-3 pl-3">
+          <ion-select formControlName="documents" placeholder="Tipo de documento" interface="action-sheet" errorText="Campo obligatorio">
+            <ion-select-option *ngFor="let document of documentTypes" [value]="document.id">{{document.description}}</ion-select-option>
+          </ion-select>
+          <ion-input formControlName="idNumber" color="primary" class="shadow-sm" placeholder="Numero de documento" errorText="Campo obligatorio"></ion-input>
+          <ion-input type="date" formControlName="expeditionDate" color="primary" placeholder="Fecha de expedicion de documento" errorText="Campo obligatorio"> </ion-input>
+          <ion-input type="date" formControlName="birthDate" color="primary" class="shadow-sm" placeholder="Fecha de nacimiento" errorText="Campo obligatorio"></ion-input>
+          <ion-select formControlName="gender" placeholder="Tipo de documento" interface="action-sheet" errorText="Campo obligatorio">
+            <ion-select-option *ngFor="let document of documentTypes" [value]="document.id">{{document.description}}</ion-select-option>
+          </ion-select>
+        </div>
+
+      </div>
+      <div class="text-slate-600 mt-5">
+        <ion-text color="secondary" class="mb-4 font-bold">Configura tu cuenta</ion-text>
+        <div class="pr-3 pl-3">
+          <ion-input type="email" formControlName="email" color="primary" class="shadow-sm" placeholder="Correo electronico" errorText="Correo electronico invalido"> </ion-input>
+          <ion-input  type="email" formControlName="confirmEmail" color="primary" class="shadow-sm" placeholder="Confirmar correo electronico" (ionBlur)="verifyEmails($event)" errorText="Los correos no coinciden"></ion-input>
+          <ion-input id="password" type="password" formControlName="pin" color="primary" class="shadow-sm" placeholder="PIN de seguridad" errorText="Campo obligatorio">
+            <ion-button fill="clear" slot="end" aria-label="Show/hide" (click)="showPin()">
+              <ion-icon slot="icon-only" name="eye" aria-hidden="true"></ion-icon>
+            </ion-button>
+          </ion-input>
+          <ion-input id="conPassword" type="password" formControlName="confirmPin" color="primary" class="shadow-sm" placeholder="confirmar PIN de seguridad" (ionBlur)="verifyPins($event)" errorText="Los PINES no coinciden">
+            <ion-button fill="clear" slot="end" aria-label="Show/hide" (click)="showConPin()">
+              <ion-icon slot="icon-only" name="eye" aria-hidden="true"></ion-icon>
+            </ion-button>
+          </ion-input>
+        </div>
+
+      </div>
+    </div>
+    <div class="flex justify-center">
+      <ion-button type="submit" shape="round" color="primary" class="w-11/12 font-bold">Siguiente</ion-button>
+    </div>
+  </form>
+</ion-content>

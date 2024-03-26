@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <div class="flex justify-start">
+    <ion-button class="text-start" fill="clear" size="small"  href="/login">
+      <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+    </ion-button>
+    <div class="flex flex-col justify-center items-center mt-3 ml-11">
+      <ion-title color="secondary" class="mb-4 font-bold">NUMERO CELULAR</ion-title>
+      <div class="mb-2">
+        <img src="assets/stepOne.svg">
+      </div>
+    </div>
+  </div>
+</ion-header>
+
+<ion-content color="light"  class="ion-padding" [fullscreen]="true" >
+  <div class="flex justify-center mt-14 border-solid border-b-2 border-green-300 p-3">
+    <div class="flex justify-around w-4/5">
+      <img class="w-16 mr-6" src="assets/Oink.svg" alt="Coink Logo">
+      <ion-text color="medium" class="splash-text" >Para comenzar, por favor ingresa <strong>tu numero celular.</strong> </ion-text>
+    </div>
+  </div>
+
+  <form [formGroup]="form" class="h-full" (submit)="toUserForm()">
+    <div class="shadow-sm mt-6 text-slate-600 text-2xl  text-center">
+      <ion-input formControlName="phone" color="primary" type="number" aria-label="xxx-xxxxxx" placeholder="(xxx-xxxxxx)" errorText="Campo obligatorio"></ion-input>
+    </div>
+    <div class="flex flex-col justify-end h-4/6">
+      <div class="flex justify-center">
+        <ion-button type="submit" color="primary" class="w-11/12 font-bold">Siguiente</ion-button>
+      </div>
+    </div>
+  </form>
+</ion-content>

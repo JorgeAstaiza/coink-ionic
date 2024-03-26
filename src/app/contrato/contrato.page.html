@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <div class="flex justify-start">
+    <ion-button class="text-start" fill="clear" size="small" aria-label="Favorite" href="/form-user">
+      <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+    </ion-button>
+    <div class="flex flex-col justify-center items-center mt-3 ml-11">
+      <ion-title color="secondary" class="mb-4 font-bold">DATOS DE CUENTA</ion-title>
+      <div class="mb-2">
+        <img src="assets/stepThree.svg">
+      </div>
+    </div>
+  </div>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="light">
+  <div class="flex justify-center mt-3 border-solid border-b-2 border-green-300 p-3">
+    <div class="flex justify-around w-11/12">
+      <img class="w-16 mr-6" src="assets/OinkPolicia.svg" alt="Coink Logo">
+      <div class="flex flex-col">
+        <ion-text color="secondary" class="font-bold">ESTAS MUY CERCA DE SER PARTE DE COINK</ion-text>
+        <ion-text color="medium" class="splash-text" >Solo es necesario que leas detenidamente el contrato que se encuentra al final de esta pantalla y lo aceptes.</ion-text>
+      </div>
+    </div>
+  </div>
+
+  <div class="p-5 flex flex-col" >
+    <ion-title color="secondary" class="mb-4 font-bold">LO MAS IMPORTANTE</ion-title>
+    <ion-text color="medium" class="splash-text" >Para la apertura del Depósito de Bajo Monto en COINK debes ser una persona natural que de acuerdo con nuestra legislación vigente te encuentres en plena capacidad para adquirir derechos y contraer obligaciones.  </ion-text>
+    <ion-text color="medium" class="splash-text mt-4">
+      Abrirás una cuenta COINK de Bajo Monto la cual te permitirá tener un saldo hasta por 8 salarios mínimos en el mes y realizar débitos por el mismo valor. Si deseas sobrepasar estos límites debes solicitarnos la apertura de un Depósito Ordinario COINK Persona Natural.
+    </ion-text>
+
+    <ion-text color="medium" class="splash-text mt-4">
+      Solo puedes tener una cuenta COINK de Bajo Monto y podrás utilizar tu dispositivo móvil para consultar tu saldo, tus movimientos, realizar tus transacciones y administrar tu cuenta. Recuerda que no necesitas saldo mínimo ni monto inicial para su apertura.
+    </ion-text>
+
+    <div class="flex flex-col justify-start mt-6">
+      <ion-text color="medium font-bold border-b-2 w-auto">Lee tu contrato</ion-text>
+      <ion-checkbox  labelPlacement="end" class="w-3/4">
+        <ion-text color="medium">He leido ya acepto el contrato </ion-text>
+      </ion-checkbox>
+    </div>
+
+    <div class="flex justify-center mt-7">
+      <ion-button type="submit" color="primary" class="w-11/12 font-bold">ACEPTAR</ion-button>
+    </div>
+  </div>
+</ion-content>
